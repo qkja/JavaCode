@@ -4,16 +4,112 @@ import java.util.Arrays;
 
 
 
+class  Person {
+
+    private String name;
+    private int age = 18;
+
+    public void sleep() {
+
+        System.out.println("我叫" + name + ", 今年" + age + "岁了。");
+    }
+
+    public static void eat() {
+
+        System.out.println("eat");
+    }
+
+    private void printName(String name) {
+
+        this.name = name;
+    }
+
+    public void setName(String name) {
+
+        printName(name);
+    }
+
+
+}
+
 public class TestDemo {
 	
 	public static void main(String[] args) {
-		
-		int i = 0;
-		while(i < 10) {
 			
-			System.out.print((i+1) + " ");
-			i++;
+		for(int i = 0;i < args.length;i++) {
+			
+			System.out.print(args[i] + " ");
 		}
+	}
+}
+
+// public class TestDemo {
+
+    // public static void main(String[] args) {
+
+        // Person per = new Person();
+        // per.setName("张三");
+        // per.sleep();
+    // }
+// }
+
+
+
+
+
+
+// class  Person {
+
+    // public String name;
+    // public int age;
+
+    // public  void sleep() {
+
+        // System.out.println("我叫" + name + ", 今年" + age + "岁了。");
+    // }
+	// public static void eat() {
+		
+		 // System.out.println("eat");
+	// }
+
+// }
+
+// public class TestDemo {
+
+    // public static void main(String[] args) {
+
+        // Person per = new Person();
+        // per.age = 18;
+        // per.name = "张三";
+        // per.sleep();
+    // }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// public class TestDemo {
+	
+	// public static void main(String[] args) {
+		
+		// int i = 0;
+		// while(i < 10) {
+			
+			// System.out.print((i+1) + " ");
+			// i++;
+		// }
 		// for(;;) {
 			
 			// System.out.println("hehe");
@@ -22,8 +118,8 @@ public class TestDemo {
 			
 			// System.out.print((i + 1) + " ");
 		// }
-	}
-}
+	// }
+// }
 
 
 
