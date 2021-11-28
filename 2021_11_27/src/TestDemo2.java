@@ -9,6 +9,8 @@
  * Date: 2021-11-27
  * Time: 19:28
  */
+
+import java.util.Scanner;
 class Person {     //大驼峰
 
     //字段    -->    成员变量           定义在方法外面类的里面
@@ -97,7 +99,60 @@ public class TestDemo2 {
      * 封装  用private 来自修饰
      * @param args
      */
+
+
+
+
     public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+        String[] str = new String[100];
+        String arr = null;
+        int i = 0;
+        while((arr=scan.nextLine()) ){
+
+            str[i] = arr;
+            i++;
+        }
+        arr = null;
+        for(i--;i>=0;i--) {
+
+            arr+=str[i];
+        }
+        System.out.println(arr);
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static void main3(String[] args) {
 
         Student stu = new Student();
 
