@@ -8,69 +8,84 @@
 
 import java.util.Arrays;
 
-class Test {
 
-    public String toString() {
 
-        System.out.println("aaa");
-        return "bbb";
-    }
+public class TestDemo {
 
-    public static void eat() {
+    public static void main(String[] args) {
 
-        System.out.println("eat!!");
-    }
-}
+        MyArraylist myArraylist1 = new MyArraylist();
+        MyArraylist myArraylist2 = new MyArraylist();
 
-class Person {
 
-    static int i = 0;
-    static int j;
-    public int test() {
-        //实例成员方法里面不能定义静态量
-        i++;
-        return i;
+//        int[] arr = new int[10];
+//        System.out.println(arr.length);
     }
 }
 
-class Calculator {
-
-    private int num1;
-    private int num2;
+//class Test {
+//
+//    public String toString() {
+//
+//        System.out.println("aaa");
+//        return "bbb";
+//    }
+//
+//    public static void eat() {
+//
+//        System.out.println("eat!!");
+//    }
+//}
+//
+//class Person {
+//
+//    static int i = 0;
+//    static int j;
+//    public int test() {
+//        //实例成员方法里面不能定义静态量
+//        i++;
+//        return i;
+//    }
+//}
+//
+//class Calculator {
+//
+//    private int num1;
+//    private int num2;
 
 //    public void setNum(int num1,int num2) {
 //        this.num1 = num1;
 //        this.num2 = num2;
 //    }
 
-
-    public void setNum1(int num1) {
-        this.num1 = num1;
-    }
-
-    public void setNum2(int num2) {
-        this.num2 = num2;
-    }
-
-    public int add() {
-
-        return this.num1 + this.num2;
-    }
-
-    public int sub() {
-
-        return this.num1 - this.num2;
-    }
-
-    public int mul() {
-
-        return this.num1 * this.num2;
-    }
-
-    public double div() {
-
-        return this.num1 * 1.0 / this.num2;
-    }
+//
+//    public void setNum1(int num1) {
+//        this.num1 = num1;
+//    }
+//
+//    public void setNum2(int num2) {
+//        this.num2 = num2;
+//    }
+//
+//    public int add() {
+//
+//        return this.num1 + this.num2;
+//    }
+//
+//    public int sub() {
+//
+//        return this.num1 - this.num2;
+//    }
+//
+//    public int mul() {
+//
+//        return this.num1 * this.num2;
+//    }
+//
+//    public double div() {
+//
+//        return this.num1 * 1.0 / this.num2;
+//    }
 
 
 //    public int sub(int x,int y) {
@@ -87,46 +102,46 @@ class Calculator {
 //
 //        return x / y;
 //    }
-}
+//}
 
-class MyValue {
-
-    private int val;
-
-    public void setVal(int val) {
-        this.val = val;
-    }
-
-    public int getVal() {
-        return val;
-    }
-}
-
-public class TestDemo {
-
-    public static void  twoSwap( MyValue myValue1, MyValue myValue2) {
-
-        int temp = myValue1.getVal();
-        myValue1.setVal(myValue2.getVal());
-        myValue2.setVal(temp);
-    }
-    public static void main(String[] args) {
-
-        MyValue myValue1 = new MyValue();
-        myValue1.setVal(11);
-        MyValue myValue2 = new MyValue();
-        myValue2.setVal(12);
-        System.out.println("前");
-        System.out.println(myValue1.getVal());
-        System.out.println(myValue2.getVal());
-
-        twoSwap(myValue1,myValue2);
-
-        System.out.println("后");
-        System.out.println(myValue1.getVal());
-        System.out.println(myValue2.getVal());
-
-    }
+//class MyValue {
+//
+//    private int val;
+//
+//    public void setVal(int val) {
+//        this.val = val;
+//    }
+//
+//    public int getVal() {
+//        return val;
+//    }
+//}
+//
+//public class TestDemo {
+//
+//    public static void  twoSwap( MyValue myValue1, MyValue myValue2) {
+//
+//        int temp = myValue1.getVal();
+//        myValue1.setVal(myValue2.getVal());
+//        myValue2.setVal(temp);
+//    }
+//    public static void main(String[] args) {
+//
+//        MyValue myValue1 = new MyValue();
+//        myValue1.setVal(11);
+//        MyValue myValue2 = new MyValue();
+//        myValue2.setVal(12);
+//        System.out.println("前");
+//        System.out.println(myValue1.getVal());
+//        System.out.println(myValue2.getVal());
+//
+//        twoSwap(myValue1,myValue2);
+//
+//        System.out.println("后");
+//        System.out.println(myValue1.getVal());
+//        System.out.println(myValue2.getVal());
+//
+//    }
 
 
 //    private  float f = 1.0f;
@@ -163,14 +178,14 @@ public class TestDemo {
 //
 //    }
 
-    public static void main2(String[] args) {
-
-
-        Calculator cal = new Calculator();
-        cal.setNum1(11);
-        cal.setNum2(12);
-
-        System.out.println(cal.add());
+//    public static void main2(String[] args) {
+//
+//
+//        Calculator cal = new Calculator();
+//        cal.setNum1(11);
+//        cal.setNum2(12);
+//
+//        System.out.println(cal.add());
 
         //cal.add();
 
@@ -210,5 +225,5 @@ public class TestDemo {
 
 //        Test test = null;
 //        test.eat();
-    }
-}
+//    }
+//}
