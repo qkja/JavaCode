@@ -17,7 +17,37 @@ public class TestDemo {
         MyArraylist myArraylist1 = new MyArraylist();
         MyArraylist myArraylist2 = new MyArraylist();
 
+        for (int i = 0; i < 10; i++) {
 
+            myArraylist1.add(i,i);
+        }
+
+//        myArraylist1.display();
+//        myArraylist1.remove(9);
+//        myArraylist1.display();
+//        myArraylist1.remove(9);
+//        myArraylist1.display();
+//        myArraylist1.remove(0);
+//        myArraylist1.display();
+//        myArraylist1.clear();
+//        myArraylist1.display();
+
+        //myArraylist1.add(11,0);
+        //System.out.println(myArraylist1.getPos(15));
+//        myArraylist1.display();
+//        myArraylist1.add(10,10);
+//        myArraylist1.display();
+//        System.out.println(myArraylist1.contains(10));
+
+        //myArraylist1.add(13,10);
+//        myArraylist1.add(0,1);
+//        myArraylist1.add(0,2);
+//        myArraylist1.add(0,3);
+//        myArraylist1.add(3,4);
+        //myArraylist1.add(3,5);
+        //myArraylist1.display();
+        //
+        //System.out.println(myArraylist1.search(1));
 //        int[] arr = new int[10];
 //        System.out.println(arr.length);
     }
