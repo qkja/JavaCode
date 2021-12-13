@@ -25,6 +25,45 @@ public class MyLinkedList {
     public Node last;
     //类 不new一个对象  head 是 null吗  是的
 
+    //中间节点
+
+    public Node middleNode() {
+
+        if(this.head==null) {
+            throw new RuntimeException("空节点");
+        }
+//        if(this.head.next==null) {
+//            return this.head;
+//        }
+        Node slow = this.head;
+        Node fast = this.head;
+
+        while(fast != null&& fast.next!=null) {
+
+            slow = slow.next;
+            fast = fast.next.next;
+            //fast = fast.next;
+        }
+        return slow;
+    }
+    //反转单链表
+    public void reverseList() {
+
+        if(this.head == null) {
+            throw new RuntimeException("空节点");
+        }
+
+        Node helper = null;
+        Node cur = this.head.next;
+        this.head.next = null;
+        while(cur != null) {
+
+            helper = cur.next;
+            cur.next = this.head;
+            this.head = cur;
+            cur = helper;
+        }
+    }
     //头插法
     public void addFirst(int data) {
 
@@ -69,6 +108,25 @@ public class MyLinkedList {
         }
         this.last.next = node;
 
+    }
+    //找到倒数第 k 个节点
+    public Node FindKthToTail(int k) {
+
+        if(this.head == null) {
+            throw new RuntimeException("是空节点");
+        }
+
+        k = this.size() + 1 - k;
+        if(k < 1 || k > this.size()) {
+
+            throw new RuntimeException("k的值不合法");
+        }
+        Node cur = this.head;
+        while(k-1 != 0) {
+            cur = cur.next;
+            k--;
+        }
+        return cur;
     }
     //任意位置插入,第一个数据节点为0号下标
     public boolean addIndex(int index,int data) {
@@ -224,13 +282,13 @@ public class MyLinkedList {
 
     /**
      *
-     * 释放内存
+     * 释放内存  使得他们的每一个next = null  或者
      *
      */
 
     public void clear() {
 
-        this.head = null;  //虽说JVM会回收
+        this.head = null;  //虽说JVM会回收  可以实现 疑惑 这个更好
     }
 
 

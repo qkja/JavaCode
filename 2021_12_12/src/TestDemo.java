@@ -11,16 +11,30 @@ public class TestDemo {
 
         MyLinkedList myLinkedList = new MyLinkedList();
 
-        myLinkedList.addLast(2);
-        myLinkedList.addLast(2);
-        myLinkedList.addLast(5);
-        myLinkedList.addLast(2);
-        myLinkedList.addLast(2);
-        myLinkedList.addLast(3);
-        myLinkedList.addLast(2);
+        for (int i = 0; i < 10; i++) {
+            myLinkedList.addLast(i);
+        }
         myLinkedList.display();
-        myLinkedList.removeAllKey(5);
-        myLinkedList.display();
+        System.out.println(myLinkedList.middleNode().data);
+//        myLinkedList.display();
+//        System.out.println(myLinkedList.FindKthToTail(1).data);
+//        System.out.println(myLinkedList.FindKthToTail(10).data);
+//        System.out.println(myLinkedList.FindKthToTail(110).data);
+//        myLinkedList.addLast(1);
+//        myLinkedList.display();
+//        myLinkedList.reverseList();
+//        myLinkedList.display();
+//        System.out.println("heheeee");
+//        myLinkedList.addLast(2);
+//        myLinkedList.addLast(2);
+//        myLinkedList.addLast(5);
+//        myLinkedList.addLast(2);
+//        myLinkedList.addLast(2);
+//        myLinkedList.addLast(3);
+//        myLinkedList.addLast(2);
+//        myLinkedList.display();
+//        myLinkedList.removeAllKey(5);
+//        myLinkedList.display();
 //        myLinkedList.display();
 
 //        myLinkedList.remove(1);
