@@ -74,8 +74,8 @@ public class MyLinkedList {
     public boolean addIndex(int index,int data) {
 
         Node node = new Node(data);
-        //判断链表的长度
-        int len = this.size();
+//        //判断链表的长度
+//        int len = this.size();
         if(index == 0) {
 
             this.addFirst(data);
@@ -123,13 +123,68 @@ public class MyLinkedList {
         }
         return false;
     }
-//    //删除第一次出现关键字为key的节点
-//    public void remove(int key) {}
-//
-//    //删除所有值为key的节点
-//    public void removeAllKey(int key) {
-//
-//    }
+    //删除第一次出现关键字为key的节点
+    public void remove(int key) {
+
+        if(this.head==null) {
+
+            throw new RuntimeException("是空节点");
+        }
+        if(this.head.data == key) {
+
+            this.head = this.head.next;
+            return;
+        }
+        Node cur = searchNodeKey(key);
+        if(cur==null) {
+            //throw new RuntimeException("没有这个数");
+            System.out.println("没有这个数");
+            return;
+        }
+        cur.next = cur.next.next;
+        //寻找节点
+    }
+
+    private Node searchNodeKey(int key) {
+
+        Node node = this.head;
+        //if()
+        while(node.next!=null) {
+
+            if(node.next.data == key) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
+
+    //删除所有值为key的节点
+    public void removeAllKey(int key) {
+
+        if(this.head==null) {
+
+            throw new RuntimeException("空节点");
+        }
+        Node prev = this.head;
+        Node cur = this.head.next;
+        while(cur != null) {
+
+            if(cur.data != key) {
+
+                prev = cur;
+                cur = cur.next;
+            } else {
+                prev.next = cur.next;
+                cur = cur.next;
+            }
+        }
+        if(this.head.data == key) {
+
+            this.head = this.head.next;
+        }
+
+    }
     //得到单链表的长度
     public int size() {
 
@@ -166,9 +221,17 @@ public class MyLinkedList {
 
         System.out.println();
     }
-//    public void clear() {
-//
-//    }
+
+    /**
+     *
+     * 释放内存
+     *
+     */
+
+    public void clear() {
+
+        this.head = null;  //虽说JVM会回收
+    }
 
 
 //    public static void main(String[] args) {
