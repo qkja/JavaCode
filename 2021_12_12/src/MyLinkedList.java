@@ -27,6 +27,52 @@ public class MyLinkedList {
 
     //中间节点
 
+    public Node partition(int x) {
+
+        if(this.head == null) {
+            return null;
+        }
+        Node bs = null;
+        Node be = null;
+        Node as = null;
+        Node ae = null;
+        Node cur = this.head;
+        while(cur!=null) {
+
+            if(cur.data < x) {
+
+                if(bs==null) {
+                    bs = cur;
+                    be = cur;
+                } else {
+                    be.next = cur;
+                    be = cur;
+                }
+            } else{
+
+                if(as == null) {
+                  as = cur;
+                  ae = cur;
+                } else{
+                    ae.next = cur;
+                    ae = cur;
+                }
+
+            }
+            cur = cur.next;
+        }
+        if(bs == null) {
+            //this.head = as;
+            return as;
+        }
+        be.next = as;
+        if(ae!=null) {
+
+            ae.next = null;
+        }
+        //this.head = bs;
+        return bs;
+    }
     public Node middleNode() {
 
         if(this.head==null) {
@@ -255,6 +301,18 @@ public class MyLinkedList {
         }
 
         return count;
+    }
+
+    public void display2(Node node) {
+
+        Node cur = node;
+        //方法二
+        while (cur != null) {
+
+            System.out.print(cur.data + "->");
+            cur = cur.next;
+        }
+        System.out.println("null");
     }
 
     public void display() {

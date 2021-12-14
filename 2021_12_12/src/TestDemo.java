@@ -11,11 +11,19 @@ public class TestDemo {
 
         MyLinkedList myLinkedList = new MyLinkedList();
 
-        for (int i = 0; i < 10; i++) {
-            myLinkedList.addLast(i);
-        }
+//        for (int i = 0; i < 10; i++) {
+//            myLinkedList.addLast(i);
+//        }
+        myLinkedList.addLast(11);
+        myLinkedList.addLast(12);
+        myLinkedList.addLast(1);
+        myLinkedList.addLast(8);
+        myLinkedList.addLast(4);
         myLinkedList.display();
-        System.out.println(myLinkedList.middleNode().data);
+        myLinkedList.display2(myLinkedList.partition(4));
+        myLinkedList.display();
+        myLinkedList.display2(myLinkedList.partition(2));
+       // System.out.println(myLinkedList.middleNode().data);
 //        myLinkedList.display();
 //        System.out.println(myLinkedList.FindKthToTail(1).data);
 //        System.out.println(myLinkedList.FindKthToTail(10).data);
