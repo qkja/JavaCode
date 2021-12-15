@@ -27,6 +27,52 @@ public class MyLinkedList {
 
     //中间节点
 
+
+    //回文结构
+    public boolean chkPalindrome() {
+
+        if(this.head==null) {
+            return false;
+        }
+        if(this.head.next==null) {
+            return true;
+        }
+        //找到中间节点
+        Node fast = this.head;
+        Node slow = this.head;
+        while(fast != null&& fast.next!=null) {
+
+            slow = slow.next;
+            fast = fast.next.next;
+            //fast = fast.next;
+        }
+
+        //反转
+        Node cur = slow.next;
+        while(cur!=null) {
+            Node curNext = cur.next;
+            cur.next = slow;
+            slow = cur;
+            cur = curNext;
+        }
+
+        //头 -》
+
+        while(slow != this.head) {
+
+            if(slow.data != this.head.data) {
+                return false;
+            }
+            if(this.head.next==slow) {
+
+                return true;
+            }
+            slow = slow.next;
+            this.head = this.head.next;
+        }
+        return true;
+
+    }
     public Node partition(int x) {
 
         if(this.head == null) {
@@ -247,6 +293,30 @@ public class MyLinkedList {
         }
         cur.next = cur.next.next;
         //寻找节点
+    }
+
+    public Node deleteDuplication() {
+
+        Node newHead = new Node(-1);
+        Node cur = this.head;
+        Node tep = newHead;
+        while(cur != null) {
+
+            if(cur.next!=null && cur.data==cur.next.data) {
+
+                while(cur.next != null&&cur.data == cur.next.data) {
+                    cur = cur.next;
+                }
+            } else{
+
+                tep.next = cur;
+                tep =  tep.next;
+            }
+            cur = cur.next;
+        }
+
+        tep.next = null;
+        return newHead.next;
     }
 
     private Node searchNodeKey(int key) {

@@ -17,12 +17,15 @@ public class TestDemo {
         myLinkedList.addLast(11);
         myLinkedList.addLast(12);
         myLinkedList.addLast(1);
-        myLinkedList.addLast(8);
-        myLinkedList.addLast(4);
+        myLinkedList.addLast(1);
+        myLinkedList.addLast(12);
+        myLinkedList.addLast(11);
         myLinkedList.display();
-        myLinkedList.display2(myLinkedList.partition(4));
-        myLinkedList.display();
-        myLinkedList.display2(myLinkedList.partition(2));
+        System.out.println(myLinkedList.chkPalindrome());
+
+//        myLinkedList.display2(myLinkedList.partition(4));
+//        myLinkedList.display();
+//        myLinkedList.display2(myLinkedList.partition(2));
        // System.out.println(myLinkedList.middleNode().data);
 //        myLinkedList.display();
 //        System.out.println(myLinkedList.FindKthToTail(1).data);
