@@ -28,6 +28,23 @@ public class MyLinkedList {
     //中间节点
 
 
+    //判断有没有环
+    public boolean hasCycle() {
+
+        Node slow = this.head;
+        Node fast = this.head;
+        while(fast!=null  && fast.next!=null) {
+
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast==slow) {
+
+                return true;
+            }
+        }
+        return false;
+    }
+
     //回文结构
     public boolean chkPalindrome() {
 
