@@ -28,6 +28,33 @@ public class MyLinkedList {
     //中间节点
 
 
+    //返回环的初始位置
+    public Node detectCycle() {
+
+        Node slow = this.head;
+        Node fast = this.head;
+        while(fast!=null  && fast.next!=null) {
+
+            fast = fast.next.next;
+            slow = slow.next;
+            if(fast==slow) {
+
+                //return true;
+                break;
+            }
+        }
+        if(fast==null||fast.next==null) {
+            return null;
+        }
+        slow = this.head;
+        while(slow!=fast) {
+
+            slow = slow.next;
+            fast = slow.next;
+        }
+        return slow;
+        //return false;
+    }
     //判断有没有环
     public boolean hasCycle() {
 
