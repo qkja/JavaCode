@@ -7,6 +7,34 @@
  * Time: 16:24
  */
 public class TestDemo {
+
+    public Node mergeTwoLists(Node headA,Node headB) {
+
+        Node newHead = new Node(-1);
+        Node tem = newHead;
+        while(headA!=null&&headB!=null) {
+
+            if(headA.data<=headB.data) {
+
+                tem.next = headA;
+                tem = tem.next;
+                headA = headA.next;
+            } else {
+
+                tem.next = headB;
+                tem = tem.next;
+                headA = headB.next;
+            }
+        }
+        if(headA!=null) {
+            tem.next = headA;
+        }
+        if(headB!=null) {
+            tem.next = headB;
+        }
+        return newHead.next;
+    }
+
     public static void main(String[] args) {
 
         MyLinkedList myLinkedList = new MyLinkedList();
