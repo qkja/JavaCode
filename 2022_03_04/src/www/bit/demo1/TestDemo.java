@@ -12,7 +12,7 @@ import javax.print.DocFlavor;
 
 public class TestDemo {
 
-    public static void main(String[] args) {
+    public static void main1(String[] args) {
         BinaryTree binaryTree = new BinaryTree();
         TreeNode root = binaryTree.createTree();
         binaryTree.preOrderTraversal(root);
