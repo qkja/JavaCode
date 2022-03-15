@@ -7,7 +7,7 @@
  */
 public class TestDemo {
 
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
         BinaryTree binaryTree = new BinaryTree();
         TreeNode root = binaryTree.createTree();
         TreeNode ret = binaryTree.find2(root,'F');
@@ -17,7 +17,7 @@ public class TestDemo {
         System.out.println(ret.val);
 
     }
-    public static void main1(String[] args) {
+    public static void main(String[] args) {
         BinaryTree binaryTree = new BinaryTree();
         TreeNode root = binaryTree.createTree();
         binaryTree.getLeafSize1(root);

@@ -41,6 +41,55 @@ public class BinaryTree {
         C.right = G;
         return A;
     }
+    public boolean isSubtree(TreeNode root, TreeNode subRoot) {
+        if(root == null || subRoot == null) {
+            return false;
+        }
+        if(root.val == subRoot.val) {
+            return true;
+        }
+        boolean ret = isSubtree(root.left,subRoot)&&isSubtree(root.right,subRoot);
+        return ret;
+    }
+    public int getLeafSize3(TreeNode root) {
+        if(root==null) {
+            return 0;
+        }
+        int left = getLeafSize(root.left);
+        int right = getLeafSize(root.right);
+
+        int ret = left > right ?  left:right;
+        if(Math.abs(left-ret) < 2) {
+
+        }
+        return ret + 1;
+    }
+
+
+
+    // 相同
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        if(p == null && q == null) {
+            return true;
+        }
+        if((p == null && q != null)||(p != null && q == null)) {
+            return false;
+        }
+        if(p.val != q.val) {
+            return false;
+        }
+        return isSameTree(p.left,q.left)&&isSameTree(p.right,q.right);
+    }
+    //求高度
+    public int getLeafSize(TreeNode root) {
+        if(root==null) {
+            return 0;
+        }
+        int left = getLeafSize(root.left);
+        int right = getLeafSize(root.right);
+        int ret = left > right ?  left:right;
+        return ret + 1;
+    }
 
     // 遍历思路-求叶子结点个数
     public static int leafSize = 0;
@@ -57,6 +106,14 @@ public class BinaryTree {
 
 
     // 子问题思路-求叶子结点个数
+//    int getLeafSize2(TreeNode root) {
+//        if(root==null) {
+//            return 0;
+//        }
+//
+//
+//        return 1 + getLeafSize2(root.left) + getLeafSize2(root.right);
+//    }
     int getLeafSize2(TreeNode root) {
         if(root==null) {
             return 0;
@@ -69,10 +126,10 @@ public class BinaryTree {
     }
 
     public int getKLevelSize(TreeNode root,int k) {
-        if(root==null||k==-1) {
+        if(root == null || k == -1) {
             return -1;
         }
-        if(k==1) {
+        if(k == 1) {
             return 1;
         }
         return getKLevelSize(root.left,k-1) + getKLevelSize(root.right,k-1);
