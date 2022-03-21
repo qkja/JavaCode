@@ -1,3 +1,5 @@
+package www.bit.demo1;
+
 import java.util.Scanner;
 import java.util.Arrays;
 import  java.lang.String;
