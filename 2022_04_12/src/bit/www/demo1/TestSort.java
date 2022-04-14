@@ -98,24 +98,58 @@ public class TestSort {
             }
         }
     }
-    public static void adjustDown(int[] array,int root) {
+    public static void adjustDown(int[] array,int len ,int root) {
         if(array == null) {
             return;
         }
         int parent = root;
-        int child = 2*parent - 1;
-        while (child > 0) {
-
+        int child = 2 * parent + 1;
+        while (child < len) {
+            if(child+1 < len && array[child + 1] > array[child]) {
+                child++;
+            }
+            if(array[child] > array[parent]) {
+                int ret = array[child];
+                array[child] = array[parent];
+                array[parent] = ret;
+            } else {
+                break;
+            }
+            parent = child;
+            child = 2 * parent + 1;
+        }
+    }
+    public static void pop(int[] array,int size) {
+        if(array == null) {
+            return;
+        }
+        //
+        int ret = array[0];
+        array[0] = array[array.length -1-size];
+        array[array.length -1] = ret;
+        adjustDown(array, array.length-size,0);
+    }
+    public static void createHeap(int[] array) {
+        for (int i = (array.length-1-1)/2; i >= 0; i--) {
+            //向下调整
+            adjustDown(array, array.length,i);
         }
     }
     public static void heapSort(int[] array) {
         if(array == null) {
             return;
         }
-        for (int i = (array.length-1-1)/2; i >=0; i--) {
-            //向上调整
-            adjustDown(array,i);
+        createHeap(array);
+
+        int end = array.length-1;
+        while (end > 0) {
+            int ret = array[end];
+            array[end] = array[0];
+            array[0] = ret;
+            adjustDown(array,end,0);
+            end--;
         }
+        //
     }
 
     public static void bubbleSort(int[] array) {
@@ -139,7 +173,12 @@ public class TestSort {
     }
 
     public static void main(String[] args) {
-        int[] arr = {5,4,1,3};
+        int[] arr = {5,1};
+        heapSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+    public static void main3(String[] args) {
+        int[] arr = {5};
         bubbleSort(arr);
         System.out.println(Arrays.toString(arr));
     }
