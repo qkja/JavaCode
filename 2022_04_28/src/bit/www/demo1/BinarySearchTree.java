@@ -42,21 +42,21 @@ public class BinarySearchTree {
       stack.clear();
    }
 
-   public boolean search(int key) {
+   public Node search(int key) {
       if(this.root == null) {
-         return false;
+         return null;
       }
       Node cur = root;
       while (cur != null) {
          if(cur.val == key) {
-            return true;
+            return cur;
          } else if(cur.val > key) {
             cur = cur.left;
          } else {
             cur = cur.right;
          }
       }
-      return false;
+      return null;
    }
 
    public boolean insert(int val) {
@@ -84,5 +84,62 @@ public class BinarySearchTree {
          prev.left = new Node(val);
       }
       return true;
+   }
+   public boolean remove(int key) {
+      if(this.root == null) {
+         return true;
+      }
+      Node cur = this.root;
+      Node parent = null;
+
+      while (cur != null) {
+         if(cur.val == key) {
+            //开始删除
+            removeNode(cur,parent);
+            return true;
+         } else if(cur.val < key) {
+            parent = cur;
+            cur = cur.right;
+         } else {
+            parent = cur;
+            cur = cur.left;
+         }
+      }
+      return false;
+   }
+   private void removeNode(Node cur,Node parent) {
+      if(cur.left == null) {
+         if(cur == this.root) {
+            this.root = cur.right;
+         } else if(cur == parent.left) {
+            parent.left = cur.right;
+         }else {
+            parent.right = cur.right;
+         }
+      } else if (cur.right == null) {
+         if(cur == this.root) {
+            this.root = cur.left;
+         } else if (cur == parent.right) {
+            parent.right = cur.left;
+         } else {
+            parent.left = cur.left;
+         }
+      } else {
+
+            Node targetParent = cur;
+            //右侧找 最小
+            Node target = cur.right;
+            while (target.left != null) {
+               targetParent = target;
+               target = target.left;
+            }
+            //覆盖  数据
+            cur.val = target.val;
+            if(targetParent.left == target) {
+               targetParent.left = target.right;
+            } else {
+               targetParent.right = target.right;
+            }
+      }
    }
 }
