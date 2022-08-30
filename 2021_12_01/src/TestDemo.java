@@ -15,30 +15,12 @@ public class TestDemo {
     public static void main(String[] args) {
 
         MyArraylist myArraylist1 = new MyArraylist();
-        //MyArraylist myArraylist2 = new MyArraylist();
+        MyArraylist myArraylist2 = new MyArraylist();
 
         for (int i = 0; i < 10; i++) {
 
             myArraylist1.add(i,i);
         }
-        myArraylist1.display();
-        myArraylist1.add(0,-1);
-        myArraylist1.display();
-
-
-
-
-
-
-
-
-
-
-
-
-
-//        myArraylist1.setPos(0,-1);
-//        myArraylist1.display();
 
 //        myArraylist1.display();
 //        myArraylist1.remove(9);

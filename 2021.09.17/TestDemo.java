@@ -5,8 +5,6 @@ public class TestDemo {
 	Scanner scan = new Scanner (System.in);
 	
 	int num = scan.nextInt(); 
-	
-	
 	num++;
 	System.out.println(num);
 	
