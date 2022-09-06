@@ -38,6 +38,10 @@
 out
 *.iml
 *.class
+.settings
+*.project
+*.classpath
+
 
 
 
