@@ -1,0 +1,30 @@
+
+class Student {
+	
+	String name;
+	int age;
+	String id;
+	public Student(String name,int age) {
+		this.name = name;
+		this.age = age;
+	}
+	public void eat() {
+		System.out.println("我叫" + this.name+ ",今年已经"+this.age+"岁了");
+	}
+}
+public class TestDemo {
+	public static void main(String[] args) {
+		
+		Student student = new Student("qkj",18);
+		student.eat();
+		student.eat();
+		
+		// String str1 = "abcd";
+		// String str2 = str1 + "ef";
+		// System.out.println(str2);
+		// int a = 10;
+		// int b = 20;
+		// int c = a + b;
+		// System.out.println(c);
+	}
+}
